@@ -24,7 +24,7 @@
     ?>
     <!--AQUI EU VOLTO PARA O HTML -->
     <form action="dados.php" method="post">
-        <input type="text" name="nome" placeholder="Digite seu nome">
+        <input type="text" name="abobrinha" placeholder="Digite seu nome">
         <input type="email" name="mail" placeholder="Digite seu e-mail">
         <input type="submit" name="enviar" value="Enviar">
     </form>
