@@ -18,7 +18,7 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="#" method="post">
+                        <form action="processaUsuario.php" method="post">
                             <div class="mb-3">
                                 <label for="nome" class="form-label">Nome Completo</label>
                                 <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" name="nome" required>
@@ -42,7 +42,7 @@
                                 </div>
                             </div>
                             <div class="form-check mb-3">
-                                <input class="form-check-input" type="checkbox" id="termos" name="termoUso" required>
+                                <input class="form-check-input" type="checkbox" id="termos" name="termoUso">
                                 <label class="form-check-label" for="termos">Aceito os termos de uso</label>
                             </div>
                             <div class="d-grid">
