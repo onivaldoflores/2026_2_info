@@ -68,22 +68,33 @@ try{
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($usuarios as $usuarios): ?>
+                            <?php foreach ($usuarios as $usuario): ?>
                                 <tr>
-                                    <td><?= $usuarios['id'] ?></td>
-                                    <td><?= htmlspecialchars($usuarios['nome']) ?></td>
-                                    <td><?= htmlspecialchars($usuarios['email']) ?></td>
-                                    <td><?= htmlspecialchars($usuarios['fone']) ?></td>
+                                    <td><?= $usuario['id'] ?></td>
+                                    <td><?= htmlspecialchars($usuario['nome']) ?></td>
+                                    <td><?= htmlspecialchars($usuario['email']) ?></td>
+                                    <td><?= htmlspecialchars($usuario['fone']) ?></td>
                                     <td>
-                                        <a href="editarUsuario.php?id=<?= $usuarios['id'] ?>" class="btn btn-warning btn-sm">Editar</a>
-                                        <a href="excluirUsuario.php?id=<?= $usuarios['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Deseja realmente excluir este usuário?')">Excluir</a>
+                                        <a href="editarUsuario.php?id=<?= $usuario['id'] ?>" class="btn btn-warning btn-sm">Editar</a>
+                                        <a href="excluirUsuario.php?id=<?= $usuario['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Deseja realmente excluir este usuário?')">Excluir</a>
                                     </td>                                    
                                 </tr>
                             <?php endforeach; ?>    
                         </tbody>
-
                     </table>
                 </div>
+                <!-- HTML DO SISTEMA DE PÁGINAÇÃO -->
+                <?php if($totalPaginas > 1): ?>
+                <nav>
+                    <ul class="pagination">
+                        <?php for($i = 1; $i <= $totalPaginas; $i++): ?>
+                        <li class="page-item <?= $i == $pagina ? 'active' : '' ?>">
+                            <a class="page-link" href="?pagina=<?= $i ?>"> <?= $i ?> </a>
+                        </li>
+                        <?php endfor; ?>
+                    </ul>
+                </nav>    
+                <?php endif; ?>
             </div>
         </div>
     </div>    
